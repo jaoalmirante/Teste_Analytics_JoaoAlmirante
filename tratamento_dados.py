@@ -18,6 +18,7 @@ def traduzir_coluna(df, coluna, idioma_origem='pt', idioma_destino='en'):
     """Traduz os valores de uma coluna usando a biblioteca Translator."""
     translator = Translator(to_lang=idioma_destino, from_lang=idioma_origem)
     df[coluna] = df[coluna].apply(lambda x: translator.translate(x))
+    df[coluna] = df[coluna].apply(lambda x: 'seven' if x == 'sete' else x)
     return df
 
 
