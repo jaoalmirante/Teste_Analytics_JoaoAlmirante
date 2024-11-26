@@ -1,7 +1,9 @@
 import random
 from datetime import datetime
 import pandas as pd
+import numpy as np
 from faker import Faker
+from num2words import num2words
 
 
 def configurar_faker():
@@ -46,6 +48,30 @@ def criar_dataframe(dados):
     """Cria e retorna um DataFrame a partir da lista de dados fornecida."""
     return pd.DataFrame(dados)
 
+
+def baguncar_dados(df):
+    """
+    Introduz erros simulados no DataFrame para testes e validação.
+
+    Args:
+        df (pd.DataFrame): DataFrame original.
+
+    Returns:
+        pd.DataFrame: DataFrame modificado com erros introduzidos.
+    """
+    # Introduzir valores nulos na coluna 'Preço'
+    df.loc[random.sample(range(len(df)), 2), 'Preço'] = np.nan
+
+    # Introduzir datas inválidas na coluna 'Data'
+    df.loc[random.sample(range(len(df)), 2), 'Data'] = '2024-31-01'
+
+    # Converter algumas quantidades para texto
+    for idx in random.sample(range(len(df)), 2):
+        df.at[idx, 'Quantidade'] = num2words(df.at[idx, 'Quantidade'], lang='pt-BR')
+
+    return df
+
+
 def salvar_csv(df, caminho_arquivo):
     """Salva o DataFrame em um arquivo CSV."""
     df.to_csv(caminho_arquivo, index=False)
@@ -80,6 +106,9 @@ def gerar_dataset(caminho_saida):
 
     # Criar DataFrame
     df = criar_dataframe(dados)
+
+    # Bagunçar os dados
+    df = baguncar_dados(df)
 
     # Salvar no arquivo CSV
     salvar_csv(df, caminho_saida)
