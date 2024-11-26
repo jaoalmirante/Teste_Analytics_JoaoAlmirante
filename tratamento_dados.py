@@ -1,4 +1,5 @@
 import pandas as pd
+from translate import Translator
 from word2number import w2n
 
 
@@ -10,6 +11,13 @@ def carregar_dados(caminho_arquivo):
 def interpolar_valores_nulos(df, coluna, metodo='linear'):
     """Realiza interpolação para valores nulos de uma coluna específica."""
     df[coluna].interpolate(method=metodo, inplace=True)
+    return df
+
+
+def traduzir_coluna(df, coluna, idioma_origem='pt', idioma_destino='en'):
+    """Traduz os valores de uma coluna usando a biblioteca Translator."""
+    translator = Translator(to_lang=idioma_destino, from_lang=idioma_origem)
+    df[coluna] = df[coluna].apply(lambda x: translator.translate(x))
     return df
 
 
@@ -49,6 +57,7 @@ def processar_dados(caminho_entrada, caminho_saida):
     df = interpolar_valores_nulos(df, coluna='Preço')
 
     # Traduzir e converter valores da coluna 'Quantidade'
+    df = traduzir_coluna(df, coluna='Quantidade')
     df = converter_texto_para_numero(df, coluna='Quantidade')
 
     # Filtrar dados por data e valores nulos na coluna 'Preço'
