@@ -33,13 +33,19 @@ def adicionar_mes_ano(df, coluna_data, nova_coluna):
 def calcular_tendencia_vendas(df, coluna_periodo, coluna_receita):
     """Calcula a tendência de vendas agrupando por período e somando a receita."""
     tendencia = df.groupby(coluna_periodo)[coluna_receita].sum().reset_index()
-    tendencia[coluna_receita] = tendencia[coluna_receita].round(2)  # Formata para 2 casas decimais
+    tendencia[coluna_receita] = tendencia[coluna_receita].round(2)
     return tendencia
 
+def calcular_vendas_por_categoria(df, coluna_categoria, coluna_receita):
+    """Calcula as vendas totais por categoria."""
+    vendas_categoria = df.groupby(coluna_categoria)[coluna_receita].sum().reset_index()
+    vendas_categoria[coluna_receita] = vendas_categoria[coluna_receita].round(2)
+    return vendas_categoria
 
-def salvar_dados(df, caminho_arquivo):
-    """Salva o DataFrame em um arquivo CSV."""
-    df.to_csv(caminho_arquivo, index=False)
+def produtos_mais_vendidos(df, coluna_produto, coluna_quantidade, top_n=5):
+    """Retorna os produtos mais vendidos."""
+    top_produtos = df.groupby(coluna_produto)[coluna_quantidade].sum().nlargest(top_n).reset_index()
+    return top_produtos
 
 
 def criar_grafico_tendencia(df, coluna_periodo, coluna_receita):
@@ -55,8 +61,31 @@ def criar_grafico_tendencia(df, coluna_periodo, coluna_receita):
     plt.show()
 
 
+def criar_grafico_vendas_por_categoria(df, coluna_categoria, coluna_receita):
+    """Cria um gráfico de barras mostrando vendas por categoria."""
+    plt.figure(figsize=(10, 6))
+    plt.bar(df[coluna_categoria], df[coluna_receita], color='teal')
+    plt.title('Vendas por Categoria', fontsize=16)
+    plt.xlabel('Categoria', fontsize=12)
+    plt.ylabel('Receita (em R$)', fontsize=12)
+    plt.xticks(rotation=45, fontsize=10)
+    plt.tight_layout()
+    plt.show()
+
+def criar_grafico_top_produtos(df, coluna_produto, coluna_quantidade):
+    """Cria um gráfico de barras para os produtos mais vendidos."""
+    plt.figure(figsize=(10, 6))
+    plt.barh(df[coluna_produto], df[coluna_quantidade], color='orange')
+    plt.title('Top Produtos Mais Vendidos', fontsize=16)
+    plt.xlabel('Quantidade Vendida', fontsize=12)
+    plt.ylabel('Produto', fontsize=12)
+    plt.gca().invert_yaxis()  # Inverte a ordem dos produtos para uma melhor visualização
+    plt.tight_layout()
+    plt.show()
+
+
 def processar_dados_vendas(caminho_entrada, caminho_saida):
-    """Processa os dados de vendas, incluindo cálculo de receita e tendência."""
+    """Processa os dados de vendas, incluindo cálculo de receita, tendência e análises adicionais."""
     # Carregar dados
     df = carregar_dados(caminho_entrada)
 
@@ -75,12 +104,15 @@ def processar_dados_vendas(caminho_entrada, caminho_saida):
     # Calcular tendência de vendas
     tendencia_vendas = calcular_tendencia_vendas(df, coluna_periodo='MesAno', coluna_receita='Receita')
 
-    # Salvar resultados
-    salvar_dados(tendencia_vendas, caminho_saida)
+    # Análises adicionais
+ # Análises adicionais
+    vendas_categoria = calcular_vendas_por_categoria(df, coluna_categoria='Categoria', coluna_receita='Receita')
+    top_produtos = produtos_mais_vendidos(df, coluna_produto='Produto', coluna_quantidade='Quantidade')
 
-    # Criar gráfico de tendência
+    # Criar gráficos
     criar_grafico_tendencia(tendencia_vendas, coluna_periodo='MesAno', coluna_receita='Receita')
-
+    criar_grafico_vendas_por_categoria(vendas_categoria, coluna_categoria='Categoria', coluna_receita='Receita')
+    criar_grafico_top_produtos(top_produtos, coluna_produto='Produto', coluna_quantidade='Quantidade')
 
 # Executar o processamento
 if __name__ == "__main__":
