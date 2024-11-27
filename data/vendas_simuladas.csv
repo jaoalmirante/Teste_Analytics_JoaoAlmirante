@@ -1,51 +1,51 @@
 ID,Data,Produto,Categoria,Quantidade,Preço
-1,2023-11-12,Sandália,Calçados,18,
-2,2023-10-05,Microondas,Eletrodomésticos,1,4623.22
-3,2023-08-06,Sofá,Móveis,19,2973.47
-4,2023-09-18,Microondas,Eletrodomésticos,16,2194.97
-5,2023-11-07,Calça Jeans,Vestuário,4,4008.69
-6,2023-04-03,Cadeira Gamer,Móveis,1,727.25
-7,2023-04-04,Geladeira,Eletrodomésticos,12,2276.37
-8,2023-08-04,Notebook,Eletrônicos,1,2020.33
-9,2023-09-29,Smartphone,Eletrônicos,17,4776.98
-10,2023-09-16,Microondas,Eletrodomésticos,3,1481.39
-11,2023-07-10,Smartphone,Eletrônicos,14,339.1
-12,2023-10-30,Smartphone,Eletrônicos,12,4949.79
-13,2023-12-22,Sofá,Móveis,4,1691.48
-14,2023-06-23,Smartphone,Eletrônicos,16,4658.13
-15,2023-09-07,Sandália,Calçados,20,2046.03
-16,2023-03-06,Sofá,Móveis,7,1951.55
-17,2023-01-22,Calça Jeans,Vestuário,19,239.91
-18,2023-04-16,Sandália,Calçados,2,3825.08
-19,2023-10-24,Tênis Esportivo,Calçados,13,3115.57
-20,2023-11-12,Camiseta,Vestuário,3,4995.44
-21,2023-01-29,Microondas,Eletrodomésticos,4,864.33
-22,2023-05-23,Tênis Esportivo,Calçados,18,3952.98
-23,2023-01-20,Sofá,Móveis,18,972.2
-24,2023-05-05,Notebook,Eletrônicos,3,1387.71
-25,2023-04-01,Tênis Esportivo,Calçados,2,86.54
-26,2023-02-21,Geladeira,Eletrodomésticos,2,3679.52
-27,2023-09-21,Geladeira,Eletrodomésticos,15,3938.82
-28,2024-31-01,Cadeira Gamer,Móveis,15,4673.23
-29,2023-08-19,Sofá,Móveis,10,1116.01
-30,2023-07-04,Smartphone,Eletrônicos,3,1998.02
-31,2023-10-31,Sandália,Calçados,1,4129.2
-32,2023-03-10,Smartphone,Eletrônicos,17,3811.86
-33,2023-09-06,Smartphone,Eletrônicos,11,4513.11
-34,2023-09-20,Sandália,Calçados,5,2990.94
-35,2023-10-17,Smartphone,Eletrônicos,3,1981.68
-36,2023-04-25,Geladeira,Eletrodomésticos,7,1267.29
-37,2023-03-19,Microondas,Eletrodomésticos,16,1637.2
-38,2024-31-01,Sandália,Calçados,16,305.84
-39,2023-10-03,Geladeira,Eletrodomésticos,17,331.77
-40,2023-04-24,Camiseta,Vestuário,10,3544.73
-41,2023-09-04,Microondas,Eletrodomésticos,1,2382.34
-42,2023-03-18,Camiseta,Vestuário,14,3281.27
-43,2023-06-01,Geladeira,Eletrodomésticos,20,3573.85
-44,2023-10-08,Microondas,Eletrodomésticos,dezasseis,81.07
-45,2023-11-01,Smartphone,Eletrônicos,13,4908.17
-46,2023-12-27,Microondas,Eletrodomésticos,3,1893.44
-47,2023-09-03,Sofá,Móveis,dezasseis,1856.54
-48,2023-07-20,Cadeira Gamer,Móveis,17,1489.34
-49,2023-05-07,Notebook,Eletrônicos,1,4458.07
-50,2023-10-19,Calça Jeans,Vestuário,19,
+1,2023-04-13,Microondas,Eletrodomésticos,1,1435.0
+2,2023-09-01,Microondas,Eletrodomésticos,18,4832.25
+3,2023-08-29,Notebook,Eletrônicos,14,2950.6
+4,2023-12-20,Sofá,Móveis,16,3843.31
+5,2023-09-12,Microondas,Eletrodomésticos,9,1646.7
+6,2023-06-27,Notebook,Eletrônicos,10,3540.11
+7,2023-06-22,Tênis Esportivo,Calçados,16,2537.53
+8,2023-05-14,Notebook,Eletrônicos,13,365.43
+9,2023-11-30,Calça Jeans,Vestuário,8,112.73
+10,2023-10-06,Microondas,Eletrodomésticos,5,997.17
+11,2023-03-05,Microondas,Eletrodomésticos,16,4741.79
+12,2023-07-25,Camiseta,Vestuário,19,4080.08
+13,2023-07-18,Tênis Esportivo,Calçados,18,136.71
+14,2023-07-05,Tênis Esportivo,Calçados,16,4317.29
+15,2023-09-20,Sofá,Móveis,20,4051.28
+16,2024-31-01,Sofá,Móveis,14,3463.12
+17,2023-12-26,Cadeira Gamer,Móveis,10,1318.33
+18,2023-02-09,Sofá,Móveis,18,3445.64
+19,2023-01-29,Calça Jeans,Vestuário,15,2496.65
+20,2023-01-06,Tênis Esportivo,Calçados,19,4716.78
+21,2023-10-06,Notebook,Eletrônicos,nove,83.05
+22,2023-04-29,Notebook,Eletrônicos,18,4507.08
+23,2023-07-10,Sandália,Calçados,9,3770.08
+24,2023-01-12,Notebook,Eletrônicos,9,475.56
+25,2024-31-01,Geladeira,Eletrodomésticos,7,156.49
+26,2023-02-01,Notebook,Eletrônicos,6,690.28
+27,2023-02-07,Geladeira,Eletrodomésticos,14,182.85
+28,2023-11-22,Calça Jeans,Vestuário,13,1200.04
+29,2023-11-22,Sofá,Móveis,2,1263.25
+30,2023-01-24,Sofá,Móveis,3,
+31,2023-10-04,Calça Jeans,Vestuário,13,121.78
+32,2023-10-10,Sandália,Calçados,6,3522.91
+33,2023-02-16,Notebook,Eletrônicos,3,4106.6
+34,2023-08-03,Sandália,Calçados,11,3084.78
+35,2023-10-07,Cadeira Gamer,Móveis,dezanove,1188.87
+36,2023-03-15,Sofá,Móveis,19,583.72
+37,2023-01-12,Calça Jeans,Vestuário,13,2039.45
+38,2023-06-21,Microondas,Eletrodomésticos,13,
+39,2023-04-06,Tênis Esportivo,Calçados,6,949.95
+40,2023-03-01,Smartphone,Eletrônicos,16,929.43
+41,2023-09-02,Sofá,Móveis,13,3158.96
+42,2023-07-02,Cadeira Gamer,Móveis,12,3451.58
+43,2023-11-29,Camiseta,Vestuário,5,3790.58
+44,2023-09-17,Geladeira,Eletrodomésticos,12,2547.7
+45,2023-06-20,Smartphone,Eletrônicos,5,2040.06
+46,2023-09-29,Sofá,Móveis,2,3391.85
+47,2023-07-29,Smartphone,Eletrônicos,2,257.53
+48,2023-04-04,Microondas,Eletrodomésticos,2,3820.67
+49,2023-12-26,Sofá,Móveis,1,3384.87
+50,2023-08-08,Sandália,Calçados,12,2997.87
